@@ -57,7 +57,7 @@ namespace DesignPatterns
         public void RemoveListener(UnityAction<T> callback)
         {
             if (callback == null) return;
-            if (_onValueChanged == null) _onValueChanged = new UnityEvent<T>();
+            if (_onValueChanged == null) return;
 
 #if UNITY_EDITOR
             UnityEventTools.RemovePersistentListener(_onValueChanged, callback);
